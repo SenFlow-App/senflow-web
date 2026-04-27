@@ -1,9 +1,8 @@
 import type { MetadataRoute } from "next";
-import { headers } from "next/headers";
-import { getBaseUrlFromHeaders } from "@/lib/seo";
+import { getBaseUrlFromEnv } from "@/lib/seo";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = getBaseUrlFromHeaders(await headers());
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = getBaseUrlFromEnv();
   const now = new Date();
 
   return [
