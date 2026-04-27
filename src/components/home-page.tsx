@@ -320,13 +320,13 @@ export function HomePage({ locale }: { locale: Locale }) {
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-6 py-12 md:px-10 lg:px-12">
         <section className="space-y-5 pt-4 text-center">
           <div className="space-y-1">
-            <div className="mx-auto w-fit">
+            <div className="logo-hover-wrap mx-auto w-fit">
               <Image
                 src="/logo.png"
                 alt={t.logoAlt}
                 width={144}
                 height={144}
-                className="h-32 w-32 object-contain"
+                className="logo-hover-image h-32 w-32 object-contain"
                 priority
               />
             </div>
