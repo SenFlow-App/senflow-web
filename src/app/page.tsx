@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -130,8 +132,57 @@ function ResourceIcon({ type }: { type: string }) {
 }
 
 export default function Home() {
+  const toggleTheme = () => {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") === "light"
+        ? "light"
+        : "dark";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    window.localStorage.setItem("senflow-theme", nextTheme);
+  };
+
   return (
     <div className="starry-bg min-h-screen">
+      <button
+        type="button"
+        onClick={toggleTheme}
+        className="theme-toggle"
+        aria-label="Cambiar entre modo oscuro y claro"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          className="theme-icon theme-icon-sun h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.9 4.9 1.4 1.4" />
+          <path d="m17.7 17.7 1.4 1.4" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m4.9 19.1 1.4-1.4" />
+          <path d="m17.7 6.3 1.4-1.4" />
+        </svg>
+        <svg
+          viewBox="0 0 24 24"
+          className="theme-icon theme-icon-moon h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+        </svg>
+      </button>
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-6 py-12 md:px-10 lg:px-12">
         <section className="space-y-5 pt-4 text-center">
           <div className="space-y-1">
