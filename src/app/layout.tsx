@@ -57,6 +57,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="zYXAPtwZRh1CBO7FObTsYy3g35pMXO9ENW4V8QgBgBk"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var key='senflow-theme';var saved=localStorage.getItem(key);var theme=(saved==='light'||saved==='dark')?saved:'dark';document.documentElement.setAttribute('data-theme',theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`,
