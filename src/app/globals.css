@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --font-display: "Clash Display", "Satoshi", Arial, sans-serif;
+  --font-body: "Satoshi", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617;
+    --foreground: #e2e8f0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+.starry-bg {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+.starry-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #020617;
+  background-image:
+    radial-gradient(ellipse at 15% 85%, rgba(59, 130, 246, 0.28) 0, transparent 52%),
+    radial-gradient(ellipse at 82% 88%, rgba(37, 99, 235, 0.24) 0, transparent 46%),
+    radial-gradient(ellipse at 52% 96%, rgba(30, 64, 175, 0.28) 0, transparent 50%),
+    linear-gradient(to bottom, rgba(2, 6, 23, 0.86) 0%, rgba(2, 6, 23, 0.08) 52%),
+    radial-gradient(circle at 18px 22px, rgba(255, 255, 255, 0.92) 0 1.3px, transparent 2px),
+    radial-gradient(circle at 110px 84px, rgba(191, 219, 254, 0.78) 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 240px 44px, rgba(255, 255, 255, 0.85) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 330px 132px, rgba(186, 230, 253, 0.72) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 58px 148px, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 395px 36px, rgba(255, 255, 255, 0.65) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 22px 32px, rgba(255, 255, 255, 0.64) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 84px 156px, rgba(219, 234, 254, 0.58) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 154px 74px, rgba(255, 255, 255, 0.56) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 226px 18px, rgba(186, 230, 253, 0.56) 0 0.8px, transparent 1.5px),
+    radial-gradient(circle at 300px 112px, rgba(255, 255, 255, 0.55) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 372px 164px, rgba(255, 255, 255, 0.52) 0 0.8px, transparent 1.5px),
+    radial-gradient(circle at 36px 96px, rgba(219, 234, 254, 0.5) 0 0.8px, transparent 1.4px),
+    radial-gradient(circle at 126px 28px, rgba(255, 255, 255, 0.48) 0 0.7px, transparent 1.4px),
+    radial-gradient(circle at 204px 150px, rgba(191, 219, 254, 0.46) 0 0.7px, transparent 1.3px),
+    radial-gradient(circle at 286px 68px, rgba(255, 255, 255, 0.5) 0 0.8px, transparent 1.4px),
+    radial-gradient(circle at 348px 24px, rgba(255, 255, 255, 0.48) 0 0.7px, transparent 1.3px),
+    radial-gradient(circle at 52px 62px, rgba(186, 230, 253, 0.5) 0 0.8px, transparent 1.4px),
+    radial-gradient(circle at 142px 132px, rgba(255, 255, 255, 0.52) 0 0.8px, transparent 1.4px),
+    radial-gradient(circle at 214px 98px, rgba(255, 255, 255, 0.48) 0 0.7px, transparent 1.3px),
+    radial-gradient(circle at 296px 160px, rgba(219, 234, 254, 0.44) 0 0.7px, transparent 1.3px),
+    radial-gradient(circle at 372px 96px, rgba(255, 255, 255, 0.46) 0 0.7px, transparent 1.3px);
+  background-size:
+    auto,
+    auto,
+    auto,
+    360px 200px,
+    420px 240px,
+    460px 260px,
+    520px 300px,
+    300px 190px,
+    380px 220px,
+    180px 130px,
+    220px 160px,
+    260px 180px,
+    310px 200px,
+    360px 220px,
+    420px 250px,
+    200px 140px,
+    240px 170px,
+    290px 190px,
+    330px 210px,
+    380px 240px,
+    200px 150px,
+    260px 180px,
+    320px 210px,
+    380px 240px,
+    440px 280px;
+}
+
+.starry-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 14% 23%, rgba(255, 255, 255, 0.22) 0 1.6px, transparent 2.4px),
+    radial-gradient(circle at 71% 17%, rgba(191, 219, 254, 0.22) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle at 86% 62%, rgba(255, 255, 255, 0.2) 0 1.5px, transparent 2.3px),
+    radial-gradient(circle at 33% 81%, rgba(186, 230, 253, 0.18) 0 1.3px, transparent 2px);
+  filter: blur(0.2px);
+  animation: starDrift 26s linear infinite;
+}
+
+@keyframes starDrift {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.senflow-title-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 45%, #93c5fd 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+
+.senflow-tagline {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #60a5fa;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
