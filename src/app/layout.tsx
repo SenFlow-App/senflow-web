@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getBaseUrlFromEnv } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,25 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://senflow.app"),
+  metadataBase: getBaseUrlFromEnv(),
   title: {
     default: "Senflow - Send Bulk WhatsApp Messages",
     template: "%s | SenFlow",
   },
   description:
-    "Gestiona campañas masivas por WhatsApp y conversaciones en una sola plataforma con SenFlow.",
+    "Send bulk WhatsApp campaigns and manage conversations from one platform with SenFlow.",
   keywords: [
     "SenFlow",
     "WhatsApp campaign manager",
     "WhatsApp marketing",
-    "mensajeria masiva",
-    "gestor de conversaciones",
+    "bulk messaging",
+    "conversation manager",
   ],
   openGraph: {
     title: "Senflow - Send Bulk WhatsApp Messages",
     description:
-      "Envía campañas masivas por WhatsApp y gestiona conversaciones desde una sola plataforma.",
-    url: "https://senflow.app",
+      "Send bulk WhatsApp campaigns and manage conversations from one platform.",
+    url: "/",
     siteName: "SenFlow",
     type: "website",
   },
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Senflow - Send Bulk WhatsApp Messages",
     description:
-      "Envía campañas masivas por WhatsApp y gestiona conversaciones desde una sola plataforma.",
+      "Send bulk WhatsApp campaigns and manage conversations from one platform.",
   },
 };
 
@@ -50,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="en"
       data-theme="dark"
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
