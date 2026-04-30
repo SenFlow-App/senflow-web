@@ -18,7 +18,8 @@ const copy = {
     terminalStep: "Terminal - Step 1",
     installComment: "# Install the launcher",
     whatItDoesTitle: "What does it do?",
-    resourcesTitle: "Resources",
+    resourcesTitle: "General recommendations",
+    recommendationLabel: "Rule",
     madeBy: "Built with 🤍 in 🇨🇴 by",
     footerWhatItDoes: "What it does",
   },
@@ -34,7 +35,8 @@ const copy = {
     terminalStep: "Terminal - Paso 1",
     installComment: "# Instala el launcher",
     whatItDoesTitle: "Que hace?",
-    resourcesTitle: "Recursos",
+    resourcesTitle: "Recomendaciones generales",
+    recommendationLabel: "Regla",
     madeBy: "Hecho con 🤍 en 🇨🇴 por",
     footerWhatItDoes: "Que hace?",
   },
@@ -95,57 +97,33 @@ const features = {
   ],
 } as const;
 
-const widgets = {
+const recommendations = {
   en: [
     {
-      icon: "github",
-      title: "GitHub",
-      description: "Code and releases.",
-      href: "https://github.com/SenFlow-App/senflow",
+      title: "Do not send more than 10-20 messages per day.",
     },
     {
-      icon: "docs",
-      title: "Documentation",
-      description: "Quick guide and commands.",
-      href: "https://github.com/SenFlow-App/senflow",
+      title: "Do not send the same message or with minimal edits.",
     },
     {
-      icon: "discord",
-      title: "Discord",
-      description: "Community and support.",
-      href: "https://discord.com",
+      title: "Add random delays greater than 60 seconds.",
     },
     {
-      icon: "skills",
-      title: "Skills",
-      description: "Extensions and automation.",
-      href: "#skills",
+      title: "Avoid sending to numbers that do not have your contact saved.",
     },
   ],
   es: [
     {
-      icon: "github",
-      title: "GitHub",
-      description: "Codigo y releases.",
-      href: "https://github.com/SenFlow-App/senflow",
+      title: "No enviar mas de 10-20 mensajes al dia.",
     },
     {
-      icon: "docs",
-      title: "Documentation",
-      description: "Guia rapida y comandos.",
-      href: "https://github.com/SenFlow-App/senflow",
+      title: "No enviar el mismo mensaje o con modificaciones minimas.",
     },
     {
-      icon: "discord",
-      title: "Discord",
-      description: "Comunidad y soporte.",
-      href: "https://discord.com",
+      title: "Agregar delays superiores a 60 segundos y aleatorios.",
     },
     {
-      icon: "skills",
-      title: "Skills",
-      description: "Extensiones y automatizacion.",
-      href: "#skills",
+      title: "Tratar de no enviar a numeros que no tienen guardado el contacto.",
     },
   ],
 } as const;
@@ -188,42 +166,6 @@ function FeatureIcon({ type }: { type: string }) {
   );
 }
 
-function ResourceIcon({ type }: { type: string }) {
-  if (type === "github") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
-        <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.2 1.83 1.2 1.05 1.78 2.76 1.27 3.43.97.1-.75.42-1.27.76-1.56-2.67-.3-5.48-1.32-5.48-5.9 0-1.3.47-2.37 1.2-3.2-.12-.3-.52-1.52.12-3.17 0 0 .98-.31 3.22 1.2a11.3 11.3 0 0 1 5.86 0c2.24-1.5 3.22-1.2 3.22-1.2.64 1.65.24 2.87.12 3.17.75.83 1.2 1.9 1.2 3.2 0 4.6-2.82 5.6-5.5 5.9.44.37.82 1.1.82 2.23v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
-      </svg>
-    );
-  }
-  if (type === "docs") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 stroke-current" fill="none" strokeWidth="2">
-        <path d="M6 3h9l4 4v14H6z" />
-        <path d="M15 3v5h4" />
-        <path d="M9 13h6" />
-        <path d="M9 17h6" />
-      </svg>
-    );
-  }
-  if (type === "discord") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
-        <path d="M20.3 5.4A16.7 16.7 0 0 0 16.2 4a11.7 11.7 0 0 0-.5 1.1 15.5 15.5 0 0 0-7.4 0A12 12 0 0 0 7.7 4a16.6 16.6 0 0 0-4.1 1.4C1 9.2.3 12.9.6 16.5a16.8 16.8 0 0 0 5 2.5c.4-.6.8-1.3 1.1-2a10.8 10.8 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 10.4 0l.4.3c-.6.4-1.2.7-1.9.9.3.7.7 1.4 1.1 2a16.7 16.7 0 0 0 5-2.5c.4-4.2-.6-7.9-2.9-11.1ZM8.8 14.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.4 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z" />
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 stroke-current" fill="none" strokeWidth="2">
-      <path d="M12 3v6" />
-      <path d="M12 15v6" />
-      <path d="M3 12h6" />
-      <path d="M15 12h6" />
-      <circle cx="12" cy="12" r="3" />
-    </svg>
-  );
-}
-
 function GlobeIcon() {
   return (
     <svg
@@ -246,7 +188,7 @@ function GlobeIcon() {
 export function HomePage({ locale }: { locale: Locale }) {
   const t = copy[locale];
   const localeFeatures = features[locale];
-  const localeWidgets = widgets[locale];
+  const localeRecommendations = recommendations[locale];
   const isSpanish = locale === "es";
   const homeHref = isSpanish ? "/es" : "/";
   const quickStartHref = `${homeHref}#quick-start`;
@@ -433,21 +375,16 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section id="resources" className="space-y-6">
           <h2 className="text-3xl font-semibold text-white">{t.resourcesTitle}</h2>
           <div className="grid gap-4 md:grid-cols-4">
-            {localeWidgets.map((widget) => (
-              <a
-                key={widget.title}
-                id={`resource-${widget.icon}`}
-                href={widget.href}
-                target={widget.href.startsWith("http") ? "_blank" : undefined}
-                rel={widget.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group rounded-2xl border border-slate-800 bg-slate-950/80 p-6 text-center transition hover:border-blue-400/60 hover:bg-slate-900/90"
+            {localeRecommendations.map((recommendation, index) => (
+              <article
+                key={recommendation.title}
+                className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 text-center"
               >
-                <div className="mb-3 flex justify-center text-blue-300 group-hover:text-blue-200">
-                  <ResourceIcon type={widget.icon} />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-200">{widget.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{widget.description}</p>
-              </a>
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-300">
+                  {t.recommendationLabel} {index + 1}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-200">{recommendation.title}</p>
+              </article>
             ))}
           </div>
         </section>
@@ -467,9 +404,6 @@ export function HomePage({ locale }: { locale: Locale }) {
             </Link>
           </p>
           <div className="flex items-center gap-5">
-            <a href={`${homeHref}#resource-github`} className="transition hover:text-blue-300">
-              GitHub
-            </a>
             <a href={quickStartHref} className="transition hover:text-blue-300">
               {t.quickStartTitle}
             </a>
